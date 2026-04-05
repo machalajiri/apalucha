@@ -37,6 +37,28 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     });
 });
 
+// ===== SCROLL ANIMATIONS =====
+function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.animate-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Stagger the animation based on sibling index
+                const siblings = entry.target.parentElement.children;
+                const idx = Array.from(siblings).indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, idx * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+}
+
+handleScrollAnimations();
+
 // ===== PARTICIPANTS =====
 const participants = [
     {
@@ -45,13 +67,15 @@ const participants = [
         emoji: '🏠',
         clan: 'Rodina Machalova',
         quote: '„Vítejte u mě doma. Zouvejte se."',
+        isAdult: true,
     },
     {
         name: 'Jiří',
         nickname: 'Přiženěný',
         emoji: '💍',
         clan: 'Rodina Machalova',
-        quote: '„Machruju, jako by to bylo moje. Přitom jsem se de facto jen dobře oženil."',
+        quote: '„Machruju, jako by to bylo moje. Přitom jsem to de facto jen vyženil."',
+        isAdult: true,
     },
     {
         name: 'Kryštof',
@@ -59,6 +83,7 @@ const participants = [
         emoji: '🍺',
         clan: 'Rodina Machalova',
         quote: '„Objednávky přijímám, ale reklamace ne."',
+        isAdult: false,
     },
     {
         name: 'Luboš',
@@ -66,6 +91,7 @@ const participants = [
         emoji: '🎸',
         clan: '',
         quote: '„Přijdu. Víc neřeším."',
+        isAdult: true,
     },
     {
         name: 'Zorka',
@@ -73,6 +99,7 @@ const participants = [
         emoji: '✨',
         clan: '',
         quote: '„Jsem sice taky dítě, ale velím všem."',
+        isAdult: false,
     },
     {
         name: 'Meda',
@@ -80,6 +107,7 @@ const participants = [
         emoji: '🐻',
         clan: '',
         quote: '„Kdo jde pro dřevo? Ne já, ale fandím."',
+        isAdult: true,
     },
     {
         name: 'Alda',
@@ -87,6 +115,7 @@ const participants = [
         emoji: '🦅',
         clan: 'Filipenští',
         quote: '„Nemluvím moc. O to víc piju."',
+        isAdult: true,
     },
     {
         name: 'Meda F.',
@@ -94,6 +123,7 @@ const participants = [
         emoji: '🍽️',
         clan: 'Filipenští',
         quote: '„Co se bude jíst? A kdy? A kolikrát?"',
+        isAdult: false,
     },
     {
         name: 'Paulas velký',
@@ -101,6 +131,7 @@ const participants = [
         emoji: '🏔️',
         clan: 'Paulasovi',
         quote: '„Jsem tu. Není třeba víc."',
+        isAdult: true,
     },
     {
         name: 'Paulas malý',
@@ -108,6 +139,7 @@ const participants = [
         emoji: '🏕️',
         clan: 'Paulasovi',
         quote: '„Malý, ale hlasitý."',
+        isAdult: false,
     },
     {
         name: 'Ivšák',
@@ -115,6 +147,7 @@ const participants = [
         emoji: '🔥',
         clan: 'Famiglia Rozesral',
         quote: '„To příjmení je dědictví, ne hodnocení akce."',
+        isAdult: true,
     },
     {
         name: 'Filípek',
@@ -122,6 +155,7 @@ const participants = [
         emoji: '⚡',
         clan: 'Famiglia Rozesral',
         quote: '„Kde je akce?"',
+        isAdult: false,
     },
     {
         name: 'Daník',
@@ -129,6 +163,7 @@ const participants = [
         emoji: '🎯',
         clan: 'Famiglia Rozesral',
         quote: '„Bude pizza? Tak jo."',
+        isAdult: false,
     },
 ];
 
@@ -245,6 +280,62 @@ function renderBeers() {
         });
         beerGrid.appendChild(card);
     });
+
+    // Re-observe for scroll animations
+    handleScrollAnimations();
 }
 
 renderBeers();
+
+// ===== BEER COUNTER =====
+window.calculateBeerEstimate = function() {
+    const adults = participants.filter(p => p.isAdult).length;
+    const kids = participants.filter(p => !p.isAdult).length;
+    const days = 1.5; // pátek večer + sobota
+    const juicesPerKidPerDay = 3;
+
+    const totalBeers = 88;
+    const totalJuices = Math.round(kids * juicesPerKidPerDay * days);
+
+    const counterEl = document.getElementById('beerEstimate');
+    const breakdownEl = document.getElementById('beerBreakdown');
+
+    // Animate counter
+    let current = 0;
+    const step = Math.ceil(totalBeers / 40);
+    const interval = setInterval(() => {
+        current += step;
+        if (current >= totalBeers) {
+            current = totalBeers;
+            clearInterval(interval);
+        }
+        counterEl.textContent = current;
+    }, 30);
+
+    breakdownEl.innerHTML = `
+        ${adults} dospělých × ${days} dní × kolik to dá<br>
+        + ${totalJuices} džusů pro ${kids} dětí<br>
+        <strong style="color: var(--warm);">= hodně.</strong>
+    `;
+}
+
+// Run beer counter when section becomes visible
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            calculateBeerEstimate();
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+const counterSection = document.getElementById('beercounter');
+if (counterSection) {
+    counterObserver.observe(counterSection);
+    // Fallback: run after short delay if observer doesn't fire
+    setTimeout(() => {
+        if (document.getElementById('beerEstimate').textContent === '0') {
+            calculateBeerEstimate();
+        }
+    }, 2000);
+}

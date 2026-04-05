@@ -17,9 +17,10 @@
         <a href="#hero" class="nav-logo">APALUCHA</a>
         <div class="nav-links">
             <a href="#program">Program</a>
-            <a href="#jidelnicek">Jídlo</a>
             <a href="#veci">S sebou</a>
             <a href="#ucastnici">Kdo jede</a>
+            <a href="#pravidla">Pravidla</a>
+            <a href="#mapa">Mapa</a>
             <a href="#pivo">Pivo</a>
         </div>
         <button class="nav-toggle" aria-label="Menu">☰</button>
@@ -214,6 +215,7 @@
 </header>
 
 <!-- PROGRAM -->
+<div class="section-wrap section-wrap--green">
 <section id="program">
     <h2>Program</h2>
     <div class="timeline">
@@ -229,7 +231,7 @@
             </div>
             <div class="timeline-item">
                 <span class="time">19:30</span>
-                <span class="event">Večeře</span>
+                <span class="event">Večeře — buřty na ohni a pizza z mrazáku</span>
             </div>
             <div class="timeline-item">
                 <span class="time">21:20</span>
@@ -237,7 +239,7 @@
             </div>
             <div class="timeline-item">
                 <span class="time">21:30</span>
-                <span class="event">Večerní program — pivo, vířivka</span>
+                <span class="event">Večerní program — pivo, čirá, vířivka</span>
             </div>
         </div>
         <div class="timeline-day">
@@ -260,11 +262,11 @@
             </div>
             <div class="timeline-item">
                 <span class="time">18:00</span>
-                <span class="event">Večeře — párek v rohlíku</span>
+                <span class="event">Večeře — párek v rohlíku a pizza z mrazáku</span>
             </div>
             <div class="timeline-item">
                 <span class="time">21:00</span>
-                <span class="event">Večerka — pivo, čirá, vířivka</span>
+                <span class="event">Večerka — pivo, vířivka</span>
             </div>
         </div>
         <div class="timeline-day">
@@ -284,35 +286,10 @@
         </div>
     </div>
 </section>
-
-<!-- JÍDELNÍČEK -->
-<section id="jidelnicek">
-    <h2>Jídlo</h2>
-    <div class="menu-grid">
-        <div class="menu-card">
-            <h3>Pátek večeře</h3>
-            <p>Pizza z mrazáku</p>
-        </div>
-        <div class="menu-card">
-            <h3>Sobota snídaně</h3>
-            <p>TBD</p>
-        </div>
-        <div class="menu-card">
-            <h3>Sobota oběd</h3>
-            <p>Venku — Klokočí / Medlov</p>
-        </div>
-        <div class="menu-card">
-            <h3>Sobota večeře</h3>
-            <p>Párek v rohlíku</p>
-        </div>
-        <div class="menu-card">
-            <h3>Neděle snídaně</h3>
-            <p>TBD</p>
-        </div>
-    </div>
-</section>
+</div>
 
 <!-- CO S SEBOU -->
+<div class="section-wrap">
 <section id="veci">
     <h2>Co s sebou</h2>
     <div class="checklist-grid">
@@ -345,13 +322,16 @@
         </div>
     </div>
 </section>
+</div>
 
 <!-- ÚČASTNÍCI -->
+<div class="section-wrap section-wrap--blue">
 <section id="ucastnici">
     <h2>Kdo jede</h2>
     <p class="section-subtitle">Klikni na kohokoliv.</p>
     <div class="participants-grid" id="participantsGrid"></div>
 </section>
+</div>
 
 <!-- MODAL pro účastníky -->
 <div class="modal-overlay" id="modalOverlay">
@@ -365,12 +345,62 @@
     </div>
 </div>
 
+<!-- PRAVIDLA -->
+<div class="section-wrap section-wrap--warm">
+<section id="pravidla">
+    <h2>Pravidla Apaluchy</h2>
+    <p class="section-subtitle">Dodržování je povinné. Výjimky neexistují.</p>
+    <div class="rules-grid">
+        <div class="rule-card animate-in">
+            <span class="rule-num">1</span>
+            <p>Co se stane na Apaluše, zůstane na Apaluše.</p>
+        </div>
+        <div class="rule-card animate-in">
+            <span class="rule-num">2</span>
+            <p>Každý dospělý nese výhradní zodpovědnost pouze za své děti.</p>
+        </div>
+        <div class="rule-card animate-in">
+            <span class="rule-num">3</span>
+            <p>Kdo neuklízí, nežere.</p>
+        </div>
+        <div class="rule-card animate-in">
+            <span class="rule-num">4</span>
+            <p>Kdo usne první, prohrál.</p>
+        </div>
+        <div class="rule-card animate-in">
+            <span class="rule-num">5</span>
+            <p>Ve vířivce je výhradní zákaz konzumace jídla a alkoholu a před prvním smočením je absolutně nezbytná očista těla ve sprše.</p>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- MAPA -->
+<section id="mapa">
+    <h2>Kde nás najdete</h2>
+    <p class="section-subtitle">Rokytno 5, u Nového Města na Moravě</p>
+    <div class="map-container animate-in">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=16.00%2C49.53%2C16.10%2C49.58&layer=mapnik&marker=49.5548%2C16.0440" width="100%" height="400" style="border:none; border-radius: 16px;"></iframe>
+    </div>
+</section>
+
 <!-- PIVNÍ VOLBY -->
+<div class="section-wrap section-wrap--green">
 <section id="pivo">
     <h2>Pivní volby 2026</h2>
-    <p class="section-subtitle">Jeden člověk, jeden hlas.</p>
+    <p class="section-subtitle">Jeden člověk, jeden hlas. Kdo maže cookies, maže demokracii.</p>
     <div class="beer-grid" id="beerGrid"></div>
-    <p class="beer-note">Hlasy se ukládají v prohlížeči. Kdo maže cookies, maže demokracii.</p>
+</section>
+</div>
+
+<!-- BEER COUNTER -->
+<section id="beercounter">
+    <h2>Pivní prognóza</h2>
+    <div class="counter-box animate-in">
+        <div class="counter-num" id="beerEstimate">0</div>
+        <div class="counter-label">odhadovaná spotřeba piv</div>
+        <div class="counter-breakdown" id="beerBreakdown"></div>
+    </div>
 </section>
 
 <!-- FOOTER -->
@@ -379,6 +409,6 @@
     <p class="footer-small">Za výčep a plné krigly zodpovídají děti. Pozdější reklamace se nepřijímají.</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
