@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APALUCHA vol. 3</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">APALUCHA</a>
+        <div class="nav-links">
+            <a href="#program">Program</a>
+            <a href="#jidelnicek">Jídlo</a>
+            <a href="#veci">S sebou</a>
+            <a href="#ucastnici">Kdo jede</a>
+            <a href="#pivo">Pivo</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+    <div class="hero-content">
+        <h1>APALUCHA vol. 3</h1>
+        <p class="hero-subtitle">24.–26. dubna · Rokytno · Edukativně-terapeutický víkend pro nezletilé a jejich otce</p>
+
+        <div class="countdown-grid">
+            <div class="countdown-box">
+                <span id="days" class="countdown-num">--</span>
+                <span class="countdown-label">dní</span>
+            </div>
+            <div class="countdown-box">
+                <span id="hours" class="countdown-num">--</span>
+                <span class="countdown-label">hodin</span>
+            </div>
+            <div class="countdown-box">
+                <span id="minutes" class="countdown-num">--</span>
+                <span class="countdown-label">minut</span>
+            </div>
+            <div class="countdown-box">
+                <span id="seconds" class="countdown-num">--</span>
+                <span class="countdown-label">sekund</span>
+            </div>
+        </div>
+        <p class="countdown-note">do Apaluchy vol. 3</p>
+        <img src="water-beer.gif" alt="Táta pije pivo, dítě pije mléko" class="hero-gif">
+    </div>
+
+    <!-- Koláž-skica -->
+    <div class="hero-illustration">
+        <svg viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5e8c61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Bečka -->
+            <g transform="translate(20,170)">
+                <ellipse cx="45" cy="0" rx="26" ry="38" stroke-dasharray="3 2"/>
+                <ellipse cx="45" cy="0" rx="26" ry="38"/>
+                <line x1="19" y1="-9" x2="71" y2="-9"/>
+                <line x1="19" y1="9" x2="71" y2="9"/>
+                <ellipse cx="45" cy="0" rx="7" ry="7" fill="#e8f0e4"/>
+                <text x="45" y="50" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">bečka</text>
+            </g>
+
+            <!-- Vířivka -->
+            <g transform="translate(310,155)">
+                <ellipse cx="50" cy="28" rx="50" ry="25" fill="#e8f0e4" stroke="#5e8c61"/>
+                <path d="M18,23 Q32,14 50,23 Q68,32 82,23" stroke="#5e8c61" stroke-width="1.2"/>
+                <path d="M22,30 Q36,21 50,30 Q64,39 78,30" stroke="#5e8c61" stroke-width="1"/>
+                <path d="M30,7 Q28,0 31,-5" stroke="#7a7a6e" stroke-width="1" stroke-dasharray="2 2"/>
+                <path d="M50,4 Q48,-3 51,-8" stroke="#7a7a6e" stroke-width="1" stroke-dasharray="2 2"/>
+                <path d="M70,7 Q68,0 71,-5" stroke="#7a7a6e" stroke-width="1" stroke-dasharray="2 2"/>
+                <text x="50" y="68" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">vířivka</text>
+            </g>
+
+            <!-- Pizza -->
+            <g transform="translate(380,40)">
+                <path d="M20,0 A40,40 0 0,1 80,25 L55,45 Z" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.8"/>
+                <circle cx="42" cy="18" r="3.5" fill="#c67b3c" opacity="0.5"/>
+                <circle cx="58" cy="28" r="3" fill="#c67b3c" opacity="0.5"/>
+                <circle cx="38" cy="32" r="2.8" fill="#c67b3c" opacity="0.5"/>
+                <text x="50" y="62" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">pizza</text>
+            </g>
+
+            <!-- PlayStation ovladač -->
+            <g transform="translate(10,40)">
+                <path d="M10,22 Q5,10 18,5 L40,3 Q50,2 58,5 Q70,10 65,22 L62,35 Q58,42 48,40 L44,34 L30,34 L26,40 Q18,42 14,35 Z" fill="#e8f0e4" stroke="#5e8c61"/>
+                <circle cx="24" cy="18" r="2.5" fill="none" stroke="#5e8c61" stroke-width="1.2"/>
+                <circle cx="50" cy="13" r="1.6" fill="#5e8c61"/>
+                <circle cx="55" cy="18" r="1.6" fill="#5e8c61"/>
+                <circle cx="45" cy="18" r="1.6" fill="#5e8c61"/>
+                <circle cx="50" cy="23" r="1.6" fill="#5e8c61"/>
+                <text x="38" y="55" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">playstation</text>
+            </g>
+
+            <!-- Kelímek piva -->
+            <g transform="translate(420,170)">
+                <path d="M8,0 L4,45 L40,45 L36,0 Z" fill="#fdf0e2" stroke="#c67b3c"/>
+                <line x1="8" y1="8" x2="36" y2="8" stroke="#c67b3c" stroke-width="1"/>
+                <path d="M36,8 Q48,8 48,22 Q48,33 36,33" fill="none" stroke="#c67b3c"/>
+                <text x="22" y="60" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">výčep</text>
+            </g>
+
+            <!-- 5 dospělých s dětmi — utužení rodinných vztahů -->
+            <g transform="translate(100,5)">
+                <!-- Táta 1 — dítě na hlavě + dítě na noze -->
+                <g transform="translate(0,0)">
+                    <circle cx="25" cy="15" r="10" fill="#e8f0e4" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="25" x2="25" y2="60" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="38" x2="10" y2="52" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="38" x2="40" y2="52" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="60" x2="15" y2="78" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="60" x2="35" y2="78" stroke="#5e8c61" stroke-width="2"/>
+                    <circle cx="22" cy="13" r="1.2" fill="#5e8c61"/><circle cx="28" cy="13" r="1.2" fill="#5e8c61"/>
+                    <!-- dítě na hlavě -->
+                    <circle cx="25" cy="-2" r="5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="3" x2="25" y2="11" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="6" x2="19" y2="9" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="6" x2="31" y2="3" stroke="#c67b3c" stroke-width="1.2"/>
+                    <!-- dítě na noze -->
+                    <circle cx="14" cy="70" r="4.5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="14" y1="74" x2="18" y2="65" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="14" y1="74" x2="10" y2="80" stroke="#c67b3c" stroke-width="1.2"/>
+                </g>
+
+                <!-- Táta 2 — dítě visí na ruce -->
+                <g transform="translate(60,8)">
+                    <circle cx="25" cy="15" r="10" fill="#e8f0e4" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="25" x2="25" y2="58" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="8" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="42" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="16" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="34" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <circle cx="22" cy="13" r="1.2" fill="#5e8c61"/><circle cx="28" cy="13" r="1.2" fill="#5e8c61"/>
+                    <!-- dítě visí na levé ruce -->
+                    <circle cx="3" cy="50" r="5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="3" y1="55" x2="3" y2="65" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="3" y1="58" x2="8" y2="50" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="3" y1="65" x2="-1" y2="72" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="3" y1="65" x2="7" y2="72" stroke="#c67b3c" stroke-width="1.2"/>
+                </g>
+
+                <!-- Táta 3 (uprostřed, větší) — dítě na zádech + dítě objímá nohu -->
+                <g transform="translate(120,-5)">
+                    <circle cx="30" cy="15" r="12" fill="#e8f0e4" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="30" y1="27" x2="30" y2="68" stroke="#5e8c61" stroke-width="2.2"/>
+                    <line x1="30" y1="42" x2="12" y2="58" stroke="#5e8c61" stroke-width="2.2"/>
+                    <line x1="30" y1="42" x2="48" y2="58" stroke="#5e8c61" stroke-width="2.2"/>
+                    <line x1="30" y1="68" x2="18" y2="88" stroke="#5e8c61" stroke-width="2.2"/>
+                    <line x1="30" y1="68" x2="42" y2="88" stroke="#5e8c61" stroke-width="2.2"/>
+                    <circle cx="26" cy="13" r="1.3" fill="#5e8c61"/><circle cx="34" cy="13" r="1.3" fill="#5e8c61"/>
+                    <path d="M25,20 Q30,23 35,20" stroke="#5e8c61" stroke-width="1" fill="none"/>
+                    <!-- dítě na zádech -->
+                    <circle cx="44" cy="32" r="5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="37" x2="42" y2="48" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="40" x2="36" y2="36" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="40" x2="50" y2="38" stroke="#c67b3c" stroke-width="1.2"/>
+                    <!-- dítě objímá nohu -->
+                    <circle cx="42" cy="80" r="4.5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="42" y1="84" x2="42" y2="93" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="42" y1="87" x2="38" y2="82" stroke="#c67b3c" stroke-width="1.2"/>
+                </g>
+
+                <!-- Táta 4 — dítě na rameni -->
+                <g transform="translate(190,6)">
+                    <circle cx="25" cy="15" r="10" fill="#e8f0e4" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="25" x2="25" y2="58" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="10" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="40" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="16" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="34" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <circle cx="22" cy="13" r="1.2" fill="#5e8c61"/><circle cx="28" cy="13" r="1.2" fill="#5e8c61"/>
+                    <!-- dítě sedí na rameni -->
+                    <circle cx="43" cy="42" r="5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="43" y1="47" x2="43" y2="56" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="43" y1="50" x2="38" y2="48" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="43" y1="50" x2="49" y2="48" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="43" y1="56" x2="39" y2="63" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="43" y1="56" x2="47" y2="63" stroke="#c67b3c" stroke-width="1.2"/>
+                </g>
+
+                <!-- Táta 5 — dítě na hlavě + dítě u ruky -->
+                <g transform="translate(248,3)">
+                    <circle cx="25" cy="15" r="10" fill="#e8f0e4" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="25" x2="25" y2="58" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="10" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="36" x2="40" y2="50" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="16" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <line x1="25" y1="58" x2="34" y2="75" stroke="#5e8c61" stroke-width="2"/>
+                    <circle cx="22" cy="13" r="1.2" fill="#5e8c61"/><circle cx="28" cy="13" r="1.2" fill="#5e8c61"/>
+                    <!-- dítě na hlavě -->
+                    <circle cx="25" cy="-1" r="4.5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="3" x2="25" y2="11" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="6" x2="20" y2="9" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="25" y1="6" x2="30" y2="4" stroke="#c67b3c" stroke-width="1.2"/>
+                    <!-- dítě drží za ruku -->
+                    <circle cx="44" cy="52" r="4.5" fill="#fdf0e2" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="56" x2="44" y2="66" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="59" x2="40" y2="50" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="66" x2="40" y2="73" stroke="#c67b3c" stroke-width="1.2"/>
+                    <line x1="44" y1="66" x2="48" y2="73" stroke="#c67b3c" stroke-width="1.2"/>
+                </g>
+
+                <text x="150" y="110" text-anchor="middle" font-size="10" fill="#7a7a6e" stroke="none" font-family="Inter, sans-serif">utužení rodinných vztahů</text>
+            </g>
+        </svg>
+    </div>
+
+</header>
+
+<!-- PROGRAM -->
+<section id="program">
+    <h2>Program</h2>
+    <div class="timeline">
+        <div class="timeline-day">
+            <h3>Pátek 24. 4.</h3>
+            <div class="timeline-item">
+                <span class="time">16:00</span>
+                <span class="event">Příjezd, zabydlení</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">16:15</span>
+                <span class="event">Slavnostní naražení sudu</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">19:30</span>
+                <span class="event">Večeře</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">21:20</span>
+                <span class="event">Večerka</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">21:30</span>
+                <span class="event">Večerní program — pivo, vířivka</span>
+            </div>
+        </div>
+        <div class="timeline-day">
+            <h3>Sobota 25. 4.</h3>
+            <div class="timeline-item">
+                <span class="time">8:00</span>
+                <span class="event">Snídaně pro šroply</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">9:00</span>
+                <span class="event">Výlet</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">12:30</span>
+                <span class="event">Oběd venku — Klokočí / Medlov</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">14:00</span>
+                <span class="event">Volný program</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">18:00</span>
+                <span class="event">Večeře — párek v rohlíku</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">21:00</span>
+                <span class="event">Večerka — pivo, čirá, vířivka</span>
+            </div>
+        </div>
+        <div class="timeline-day">
+            <h3>Neděle 26. 4.</h3>
+            <div class="timeline-item">
+                <span class="time">8:00</span>
+                <span class="event">Snídaně</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">9:00</span>
+                <span class="event">Úklid</span>
+            </div>
+            <div class="timeline-item">
+                <span class="time">11:00</span>
+                <span class="event">Odjezd</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JÍDELNÍČEK -->
+<section id="jidelnicek">
+    <h2>Jídlo</h2>
+    <div class="menu-grid">
+        <div class="menu-card">
+            <h3>Pátek večeře</h3>
+            <p>Pizza z mrazáku</p>
+        </div>
+        <div class="menu-card">
+            <h3>Sobota snídaně</h3>
+            <p>TBD</p>
+        </div>
+        <div class="menu-card">
+            <h3>Sobota oběd</h3>
+            <p>Venku — Klokočí / Medlov</p>
+        </div>
+        <div class="menu-card">
+            <h3>Sobota večeře</h3>
+            <p>Párek v rohlíku</p>
+        </div>
+        <div class="menu-card">
+            <h3>Neděle snídaně</h3>
+            <p>TBD</p>
+        </div>
+    </div>
+</section>
+
+<!-- CO S SEBOU -->
+<section id="veci">
+    <h2>Co s sebou</h2>
+    <div class="checklist-grid">
+        <div class="checklist-col">
+            <h3>Nutnosti</h3>
+            <ul class="checklist">
+                <li>Oblečení na ven i na válení</li>
+                <li>Boty do terénu</li>
+                <li>Plavky — pouze dospělí (vířivka!)</li>
+                <li>Hygiena</li>
+                <li>Léky, pokud bereš</li>
+            </ul>
+        </div>
+        <div class="checklist-col">
+            <h3>Doporučujeme</h3>
+            <ul class="checklist">
+                <li>Cokoliv co zabaví děti aspoň na 10 minut</li>
+                <li>Karty</li>
+                <li>Ukulele</li>
+                <li>Pláštěnka (duben)</li>
+                <li>Něco dobrého na přilepšenou</li>
+            </ul>
+        </div>
+        <div class="checklist-col">
+            <h3>Nebrat</h3>
+            <ul class="checklist checklist-no">
+                <li>Odrážedla</li>
+                <li>Bicykly</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ÚČASTNÍCI -->
+<section id="ucastnici">
+    <h2>Kdo jede</h2>
+    <p class="section-subtitle">Klikni na kohokoliv.</p>
+    <div class="participants-grid" id="participantsGrid"></div>
+</section>
+
+<!-- MODAL pro účastníky -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-avatar" id="modalAvatar"></div>
+        <h3 id="modalName"></h3>
+        <p class="modal-nickname" id="modalNickname"></p>
+        <p class="modal-subtitle" id="modalSubtitle"></p>
+        <p class="modal-quote" id="modalQuote"></p>
+    </div>
+</div>
+
+<!-- PIVNÍ VOLBY -->
+<section id="pivo">
+    <h2>Pivní volby 2026</h2>
+    <p class="section-subtitle">Jeden člověk, jeden hlas.</p>
+    <div class="beer-grid" id="beerGrid"></div>
+    <p class="beer-note">Hlasy se ukládají v prohlížeči. Kdo maže cookies, maže demokracii.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>APALUCHA vol. 3 — Vysočina</p>
+    <p class="footer-small">Za výčep a plné krigly zodpovídají děti. Pozdější reklamace se nepřijímají.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
